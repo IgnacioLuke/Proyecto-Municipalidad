@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*overscroll-behavior: none;*/
+   
+}
+
+
+html {
+    height: 100%;
+  }
+
+body{
+    background: linear-gradient(#b7e5ff, #ffffff);
+    height: 100%;
+}
+
+/*NavBar*/
+nav{
+    position: sticky;
+    background: #fff;
+    box-shadow: 0px 8px 15px
+        rgba(0, 0, 0, 0.1);
+    height: 80px;
+    width: 100%;
+}
+
+/*logo*/
+.enlace{
+    position: absolute;
+    padding: 12px 30px;
+}
+
+.logo{
+    height: 60px;
+    width: 100%;
+  
+  
+}
+
+/*nav*/
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: #3ec2ff;
+    color: #fff;
+    transition: .5s;
+    box-shadow: 3px 3px 3px 3px
+    rgba(0, 0, 0, 0.1);
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+
+/*Formulario*/
+
+.container{
+    width: 100%;
+    margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+
+
+}
+.card{
+    width: 100%;
+    height: 400px;
+    margin: 20px;
+    box-shadow: 5px 5px 20px #a6ccf7;
+    overflow: hidden;
+    background: #fff;
+    cursor: default;
+    transition: all 40ms ease;
+   
+}
+
+.card .contenido{
+    text-align: center;
+    padding: 15px;
+   
+}
+
+.card .contenido p{
+    line-height: 1.5;
+    color: #8a8a8a;
+}
+
+.card .contenido h3{
+    font-weight: 700;
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+/*input*/
+
+.agente,.sector,.pedido,.detalles{
+    padding-top: 10px;
+    width: 50%;
+    border: none;
+    border-bottom:solid black 1px;
+}
+
+/*boton submit*/
+.botones{
+    width: 160px;
+    height: 25px;
+    border:solid black 1px;
+    background-color: #fff;
+}
+
+.botones:hover{
+    background-color: #b8d9e9;
+    cursor: pointer;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="MobileOptimized" content="Width">
+    <meta charset="UTF-8">
+    <link rel="icon" href="media/images/logo-punto-digital-header.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/97d12ae926.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Reclamos | Punto digital</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="index.html" class="enlace">
+            <img src="media/images/logo-punto-digital-header.png" alt="logo.municipalidad" class="logo">
+        </a>               
+        <ul>
+            <li><a class="active" href="index.html">Inicio <i class="fa-solid fa-house"></i></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="contenido">
+                <h3>Formulario de reclamos</h3>
+                <br/>               
+                <form action="enviar_formulario.php" method="POST">
+                    <label for="agente">Agente: </label>
+                    <input type="text" name="agente" class="agente"  required>
+                    <br/>
+                    <br/>
+                    <label for="sector">Sector: </label>
+                    <input type="text" name="sector" class="sector"  required>
+                    <br/>
+                    <br/>
+                    <label for="Pedido">Pedido: </label>
+                    <input type="text" name="pedido" class="pedido"  required>
+                    <br/>
+                    <br/>
+                    <label for="detalles">Detalles: </label>
+                    <input type="text" name="detalles" class="detalles" required>
+                    <br/>
+                    <br/>
+                    <input type="submit" class="botones">
+                    <br/>
+                </form>
+            </div>
+        </div>
+    </div>
+     
+    
+</body>
+</html>
