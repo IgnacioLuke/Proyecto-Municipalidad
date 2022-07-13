@@ -18,21 +18,22 @@
 
     
     <?php 
-        include 'config.php';
+        include '../config.php';
 
         $query= "SELECT * FROM reclamos";
         $result = mysqli_query($conexion, $query);
 
         echo "<center>";
         echo "<table>";
-        echo "<td></td>";
+        echo '<form method="POST">';
+
         echo "<td>Nro de reclamo</td>";
         echo "<td>Agente</td>";
         echo "<td>Reclamo</td>";
         echo "<td>detalles</td>";
-        echo "<td>fecha_reclamo</td>";
+        echo "<td>fecha de reclamo</td>";
         echo "<td>estado</td>";
-        echo "<td>fecha_finalizado</td>";
+        echo "<td>fecha de finalizado</td>";
         echo "<td>observaciones</td>";
         
 
@@ -42,31 +43,38 @@
 
             echo '<td>';       
             echo '<input type="checkbox" name="checks[]" value='.$registro['id'].'>';        
-            echo '</td>' ;
-
-
-            echo "<td>";    
-                echo $registro['id'];
+ 
+            echo $registro['id'];
             echo "</td>";
+
             echo "<td>";
                 echo $registro['agente'];
             echo "</td>";
+
             echo "<td>";
                 echo $registro['pedido'];
             echo "</td>";
+
             echo "<td>";
                 echo $registro['detalles'];
             echo "</td>";
+
             echo "<td>";
-                echo $registro['fecha_reclamo'];
+               $originalDate = $registro['fecha_reclamo'];
+               $timestamp = strtotime($originalDate); 
+               $newDate = date("d/m/Y H:i:s", $timestamp );
+               echo "$newDate";
             echo "</td>"; 
 
             echo "<td>";
-            echo $registro['estado'];
+                echo $registro['estado'];
             echo "</td>"; 
 
             echo "<td>" ;
-            echo $registro['fecha_finalizado'];
+               $originalDate = $registro['fecha_finalizado'];
+               $timestamp = strtotime($originalDate); 
+               $newDate = date("d/m/Y H:i:s", $timestamp );
+               echo "$newDate";
             echo "</td>"; 
 
             echo "<td>";
@@ -77,8 +85,21 @@
         
         }
         echo "</table>";
+
+        echo '<button type="submit"  name="eliminar" formaction="eliminar.php" >Eliminar</button>';
+        echo '<button type="submit"  name="guardar" formaction="guardar.php" >Guardar cambios</button>';
+        echo "<select name='select'>
+                <option value='' name='espera'>En espera</option>
+                <option value='' name='proceso'>En proceso</option>
+                <option value='' name='finalizado'>Finalizado</option>
+              </select>";
+
+        echo '</form>';
         echo "</center>";
+
     ?>
+
+    
     
 </body>
 </html>

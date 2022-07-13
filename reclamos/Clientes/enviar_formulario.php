@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include '../config.php';
 
 $agente = $_POST["agente"];
 $sector = $_POST["sector"];
@@ -9,7 +9,7 @@ $detalles = $_POST["detalles"];
 
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
-$fecha_reclamo = date('Y/m/d H:i', time());
+$fecha_reclamo = date('Y-m-d H:i:s', time());
 
 
 mysqli_query($conexion, "INSERT INTO reclamos(agente, sector, pedido, detalles, fecha_reclamo, estado) VALUES ('$agente','$sector','$pedido','$detalles','$fecha_reclamo','En espera')");
