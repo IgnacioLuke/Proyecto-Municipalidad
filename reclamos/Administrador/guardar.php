@@ -3,9 +3,9 @@
 
     if(isset ($_POST['guardar'])){
 
-        $estado = $_POST["select"];
+        $estado = $_POST['opcion'];
 
-        foreach($_POST['checks'] as $unId){ 
+        foreach($_POST["checks[]"] as $unId){ 
 
             if($estado = "En espera"){
                 $nuevoestado = $estado;
