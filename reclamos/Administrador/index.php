@@ -29,6 +29,8 @@
 
         echo "<td>Nro de reclamo</td>";
         echo "<td>Agente</td>";
+        echo "<td>Localidad</td>";
+        echo "<td>Sector</td>";
         echo "<td>Reclamo</td>";
         echo "<td>detalles</td>";
         echo "<td>fecha de reclamo</td>";
@@ -49,6 +51,14 @@
 
             echo "<td>";
                 echo $registro['agente'];
+            echo "</td>";
+
+            echo "<td>";
+                echo $registro['localidad'];
+            echo "</td>";
+
+            echo "<td>";
+                echo $registro['sector'];
             echo "</td>";
 
             echo "<td>";
