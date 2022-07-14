@@ -40,8 +40,6 @@ nav{
 .logo{
     height: 60px;
     width: 100%;
-  
-  
 }
 
 /*nav*/
@@ -49,6 +47,7 @@ nav ul{
     float: right;
     margin-right: 20px;
 }
+
 nav ul li{
     display: inline-block;
     line-height: 80px;

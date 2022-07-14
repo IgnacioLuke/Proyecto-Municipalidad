@@ -36,7 +36,7 @@
         echo "<td>fecha de reclamo</td>";
         echo "<td>estado</td>";
         echo "<td>fecha de finalizado</td>";
-        echo "<td>observaciones</td>";
+        echo "<td>Añadir observaciones</td>";
         
 
         while($registro = mysqli_fetch_assoc($result)){
@@ -88,22 +88,23 @@
             echo "</td>"; 
 
             echo "<td>";
-            echo $registro['observaciones'];
+                echo"<input type='text' name='observaciones'>";
             echo "</td>"; 
         
             echo "</tr>";
         
         }
         echo "</table>";
-
         echo '<button type="submit"  name="eliminar" formaction="eliminar.php" >Eliminar</button>';
         echo '<button type="submit"  name="guardar" formaction="guardar.php" >Guardar cambios</button>';
-        echo "<select name='select'>
-                <option value='' name='espera'>En espera</option>
-                <option value='' name='proceso'>En proceso</option>
-                <option value='' name='finalizado'>Finalizado</option>
-              </select>";
+        
+        echo '<select name="myselect">;
+                <option value="En espera" >En espera</option>
+                <option value="En proceso" >En proceso</option>
+                <option value="Finalizado" >Finalizado</option>
+              </select>';
 
+       
         echo '</form>';
         echo "</center>";
 

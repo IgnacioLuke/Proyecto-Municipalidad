@@ -3,31 +3,37 @@
 
     if(isset ($_POST['guardar'])){
 
-        $estado = $_POST['opcion'];
+        $estado = $_POST['myselect'];
+        $observaciones = $_POST['observaciones'];
+        echo $observaciones;
+        echo $estado;
 
-        foreach($_POST["checks[]"] as $unId){ 
+        if(isset ($_POST['checks'])){
 
-            if($estado = "En espera"){
-                $nuevoestado = $estado;
-                
+            foreach($_POST['checks'] as $unId){ 
+
+                if($estado == "Finalizado"){
+
+                    date_default_timezone_set('America/Argentina/Buenos_Aires');
+                    $fecha = date('Y-m-d H:i:s', time());
+
+                    $query= "UPDATE reclamos SET estado='$estado', fecha_finalizado='$fecha' WHERE id=".$unId;
+                    mysqli_query($conexion, $query);
+                    
+
+
+                }else{
+
+
+                   
+
+                }
+                $query= "UPDATE reclamos SET observaciones='$observaciones' WHERE id=".$unId;
+                mysqli_query($conexion, $query);
+
             }
-
-            if($estado = "En proceso"){
-                $nuevoestado = $estado;
-                
-            }
-
-            if($estado = "Finalizado"){
-                $nuevoestado = $estado;
-                
-            }
-
-            $query= "UPDATE reclamos SET estado='$nuevoestado' WHERE id='$unId'";
-            mysqli_query($conexion, $query);
-
-           
         }
     }
-    echo $estado;
+   
     //header('Location: index.php');
 ?>
